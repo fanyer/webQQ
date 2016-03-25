@@ -1,0 +1,190 @@
+@charset "utf-8";
+
+/* S reset 样式重置 */
+body,h1,h2,h3,h4,h5,h6,p,dl,dd,ul,ol,form,input,textarea,th,td,select { margin: 0; padding: 0; }
+li { list-style: none; }
+em { font-style:normal; }
+a { text-decoration: none; }
+img { border: none; vertical-align: top; }
+input,textarea { outline;none; }
+textarea { resize: none; overflow: auto; }
+body { position: relative; width:100%; height: 100%; font-size: 12px; font-family: '黑体'; overflow: hidden;}
+/* E reset 样式重置 */
+
+/* S public */
+html { position:relative; width: 100%; height: 100%; overflow: hidden; }
+.clear { zoom: 1; }
+.clear:after { content: ''; display: block; clear: both; }
+
+/* S 右键菜单公共样式 */
+.contextmenu { position: absolute; left: 200px; top: 200px; z-index:100; display: none; width: 140px; cursor: pointer; }
+.contextmenu ul { padding: 2px; border: 1px solid #b8cbcb; box-shadow: 2px 2px 5px #666; background: #fff; }
+.contextmenu li { position: relative; height: 25px; padding: 0 5px; }
+.contextmenu li:hover { background: #348ccc;}
+.contextmenu li:hover span {background: url(../images/portal.png) no-repeat -142px -454px; }
+.contextmenu .show { background: #348ccc; }
+.contextmenu li.show span { background: url(../images/portal.png) no-repeat -142px -454px; }
+.contextmenu h2 { position:relative; padding: 0 20px; font: normal 12px/24px '宋体'; color: #000; }
+.contextmenu span { position: absolute; top: 0; right: 0; width: 18px; height: 25px; background: url(../images/portal.png) no-repeat -122px -454px; }
+.contextmenu .segmentation { border-bottom: 1px solid #b8cbcb; }
+.contextmenu .contextmenu_con ul { position: absolute; top: 2px; right: -126px; display: none; width: 120px;}
+/* E 右键菜单公共样式  *
+/* E public */
+
+/* S 桌面 */
+#desk { position: absolute; left: 0; top: 0; z-index: 5; width: 100%; height: 100%; }
+/* S 头部导航 */
+#topnav { position: absolute; left: 45%; top: 28px; z-index:10000;  width: 240px; height: 32px; background: url(../images/sprite.png) no-repeat -140px -45px;}
+#topnav .topnav_log { position:relative; left: 7px; top: -9px; float: left; display:inline; width: 32px; height: 32px; margin-right: 10px; background: url(../images/sprite.png) no-repeat -418px -158px; cursor: pointer; }
+#topnav .topnav_log img { width: 24px; padding: 4px; }
+#topnav a {  }
+#topnav li { float: left; }
+#topnav .topnav_tab { float: left; width: 130px; }
+#topnav .topnav_tab li { width:25px; height: 28px; text-align: center;  }
+#topnav .topnav_tab li.active { background: url(../images/sprite.png) no-repeat -359px -156px;  }
+#topnav .topnav_tab li.active a { color: #000;}
+#topnav .topnav_tab a { display:inline-block; width:25px; height: 28px; font: 18px/28px '宋体'; color: #fff; }
+#topnav .topnav_tab li a:hover { color: #000;}
+#topnav .view_web { float: left; }
+#topnav .view_web li { width: 17px; height: 17px; padding: 5px 3px 4px 9px; }
+#topnav .view_web a { display: inline-block; width: 17px; height: 17px; background: url(../images/sprite.png) no-repeat; }
+#topnav .all_view a { background-position: -135px -160px; }
+#topnav .search a { background-position: -243px -160px; }
+#topnav .all_view a:hover { background-position: -210px -160px; }
+#topnav .search a:hover { background-position: -323px -160px; }
+/* E 头部导航 *
+
+/* S 侧边栏 */
+#left_sideBar { position: absolute; left: 0px; top: 30px; z-index:3; width: 73px; height: 566px; padding: 5px 0; background: url(../images/left_sideBar_bg.png) no-repeat; cursor: pointer; }
+/*  S 常用应用图标 */
+.sideBar_use { position: relative; width: 65px; height: 450px; text-align:center; }
+.sideBar_use li { width: 58px; height: 58px; margin: 6px 4px; zoom: 1; overflow: hidden; }
+.sideBar_use li:hover {	background: url(../images/appbutton_mouseover_bg4.png) no-repeat; }
+.sideBar_use .appButton_appIcon { width: 48px; height: 48px; margin: 5px auto; }
+.sideBar_use img { width: 100%;  }
+/*  E 常用应用图标
+ 
+/* S 设置 */
+.sideBar_set a{ display: inline-block; height: 0px; overflow: hidden; font-size: 0; background: url(../images/portal.png) no-repeat;}
+.sideBar_set ul { height: 29px; padding-top: 2px; }
+.sideBar_set ul li { float: left; widht: 20px; height: 20px; padding: 4px 4px 5px 8px; }
+.sideBar_set ul a { padding: 20px 0 0; }
+.sideBar_set .input { width: 20px; background-position: -81px 0; }
+.sideBar_set .voice { width: 17px; background-position: -1px 0; }
+.sideBar_set .system_set { width: 20px; background-position: -60px 0; }
+.sideBar_set .theme_set { width: 17px; background-position: -42px 0; }
+.sideBar_set .input:hover { width: 20px; background-position: -81px -20px; }
+.sideBar_set .voice:hover { width: 17px; background-position: -1px -20px; }
+.sideBar_set .system_set:hover { width: 20px; background-position: -60px -20px; }
+.sideBar_set .theme_set:hover { width: 17px; background-position: -42px -20px; }
+.sideBar_set .set_3 { padding: 6px 0 0 12px;}
+.sideBar_set .set_3 a {  width: 38px; padding-top: 38px; background-position: -102px 0; }
+.sideBar_set .set_3 a:hover { background-position: -142px 0; }
+/* E 设置 */
+/* E 侧边栏 */
+
+/* S 桌面应用 */
+
+#desk_use { position: relative; z-index: 2; overflow: hidden; }
+#desk_use .use_group { position: absolute; left: 0; top: 0; float: left; width: 100%; height: 100%; opacity: 1; filter: alpha(opacity=100); }
+#desk_use .use_icon { position: relative; }
+#desk_use .use_icon li { position: absolute; left:130px; top: 250px; width: 86px; height: 88px; cursor: pointer;  opacity: 0; filter:alpha(opacity=0); }
+#desk_use .use_icon li:hover { background: url(../images/appbutton_mouseover_bg3.png) no-repeat; }
+#desk_use .use_icon .appButton_appIcon { width: 48px; height: 48px; margin: 6px auto;  }
+#desk_use .use_icon img { width: 100%; height: 100%; }
+#desk_use .use_icon p { height: 20px; text-align:center;  }
+#desk_use .use_icon span { display: inline-block; height: 20px; padding: 0 5px; vertical-align:middle; font: 12px/20px '宋体'; color: #fff; background: rgba(41, 39, 39, 0.3);  border-radius: 8px; }
+#desk_use .use_icon em { display:inline-block; vertical-align:middle; }
+
+/* E 桌面应用 */
+/* E 桌面 */
+
+/* S 弹窗公共样式 */
+.control_window { position: absolute; top: 4px; right: 4px; }
+.control_window a { float: left; display: inline; width: 21px; height: 19px; background: url(../images/sprite.png) no-repeat;}
+.control_window .window_min {  background-position: -6px -58px; }
+.control_window .window_min:hover { background-position: -6px -30px;}
+.control_window .window_max {  background-position: -95px -59px; }
+.control_window .window_max:hover { background-position: -95px -30px;}
+.control_window .window_close {  background-position: -64px -59px; }
+.control_window .window_close:hover { background-position: -64px -30px;}
+
+
+/* E 弹窗公共样式 */
+
+/* S 主题设置（弹窗）*/
+#theme_settings { position: absolute; left: 300px; top: 50px; z-index: 1000;  display: none; width: 602px; height: 500px; background: #fff; border: 1px solid #999; border-radius: 5px 5px 0 0; cursor: pointer; }
+.theme_title { position: relative; height: 25px; background: url(../images/sprite_repeat_x_png.png) repeat-x 0 -31px; border-radius: 3px 3px 0 0;}
+.theme_title h2 { height: 25px; font: bold 14px/25px '宋体'; text-align: center; color: #6d6d6d; letter-spacing: 1px; }
+.theme_content_wrap { position: relative; border-top: 1px solid #ccc; width: 100%; height: 94.8%; }
+.theme_content { height: 474px; overflow-y: auto; overflow-x: hidden; }
+.theme_content li { float: left; display: inline; width: 160px; height: 140px; margin: 5px 10px 0; cursor: pointer; border-radius: 5px;}
+.theme_content li:hover { background: #cbe7fc;}
+.theme_content img { display: block; width: 150px; height: 110px; margin: 5px auto; border-radius: 5px;}
+.theme_content p { height: 18px; margin: 5px 0 0; text-align: center; font-size: 12px; line-height: 18px; color: #45649f; }
+/* E 主题设置（更换桌面背景）*/
+
+/* S 弹出窗口 */
+.window_pop_wrap { position: absolute; left: 200px; top: 100px; z-index: 0; width: 600px; height: 500px; opacity: 0; filter:alpha(opacity = 0); background: #fff; border: 1px solid #999; border-top: 0;  }
+.popup_title { position: absolute; top: -27px; left: -1px; width:100%;  height: 26px; background: url(../images/sprite_repeat_x_png.png) repeat-x 0 -31px; border: 1px solid #999; border-bottom: none;  border-radius: 5px 5px 0 0;}
+.popup_title h2 { height: 25px; font: bold 14px/25px '宋体'; text-align: center; color: #6d6d6d; letter-spacing: 1px; }
+.popup_content_wrap { position: absolute; top: -1px; left: 0; border-top: 1px solid #ccc; width: 100%; height: 100%;  }
+.popup_content_wrap .webbrowserMask { position: absolute; left: 0; top: 0; z-index: 2; display: none; width: 100%; height: 100%; opacity: 0; filter:alpha(opacity=0); background: blue; }
+.popup_content_wrap iframe { position: absolute; left: 0; top: 0; width: 100%; height: 100%; border:none; overflow:auto; display: block;}
+
+.window_pop_wrap .resize { position: absolute; z-index: 10; overflow: hidden; }
+.window_pop_wrap .window_resize_t { left: -1px; top: -33px; height: 5px; width: 100%; cursor: n-resize; }
+.window_pop_wrap .window_resize_r { right: -1px; top: 0px; width: 5px; height: 100%;  cursor: e-resize; }
+.window_pop_wrap .window_resize_b { left: 0px; bottom: -1px; width: 100%; height: 5px;  cursor: s-resize; }
+.window_pop_wrap .window_resize_l { left: -1px; top: 0px; width: 5px; height: 100%;  cursor: w-resize; }
+.window_pop_wrap .window_resize_rt { right: -1px; top: -27px; width: 5px; height: 5px;  cursor: ne-resize; }
+.window_pop_wrap .window_resize_rb { right: -1px; bottom: -1px; width: 5px; height: 5px;  cursor: se-resize; }
+.window_pop_wrap .window_resize_lb { left: -1px; bottom: -1px; width: 5px; height: 5px;  cursor: sw-resize; }
+.window_pop_wrap .window_resize_lt { left: -1px; top: -27px; width: 5px; height: 5px;  cursor: nw-resize; }
+/* E 弹出窗口 */
+
+/* S task */
+.task { position: absolute; bottom: 0; right: 0; z-index: 10000; display: none; height: 64px; }
+.taskGroup { float: left; width: 114px; height: 100%; }
+.taskGroup a { display: block; width: 112px; height: 100%; margin: 0 1px; background: url(../images/bg_task_nor.png) no-repeat; }
+.taskGroup .active { background: url(../images/bg_task_cur.png) no-repeat; }
+.taskGroup a:hover { background: url(../images/bg_task_over.png) no-repeat; }
+.taskGroup img { float: left; width: 32px; height: 32px; margin: 22px 5px; }
+.taskGroup a span { float: left; width: 70px; height: 36px; margin-top: 27px; color: #fff; font: 14px/36px '宋体'; }
+/* E task */
+
+/* S 桌面背景 */
+#skin_peeder { position: absolute; left: 0; top: 0; z-index: 1; width: 100%; height: 100%; }
+#skin_peeder img { width: 100%; height: 100%; }
+
+.bottomBarBg { position: absolute; left: 0; bottom: 0; z-index: 1; width: 100%; height: 130px; background: url(../images/bg_task_main.png) repeat-x; }
+.bottomBarBgTask { position: absolute; left: 0; bottom: 0; z-index: 1; width: 100%; height: 64px; background: url(../images/bg_task_b.png) repeat-x 0 41px; }
+/* E 桌面背景 */
+
+/* S 桌面背景运动效果 */
+#cloud_content { position: absolute; left: 0; top: 0; z-index: 2; width: 100%; height: 100%; }
+#cloud_content div { position: absolute; left: -580px; top: 30px; width: 580px; height: 256px; background: url(../images/cloud1.png) no-repeat; }
+/* E 桌面背景运动效果 */
+
+/* S 右键菜单 */
+.contextmenu .active b { position: absolute; left: 0; top: 0; width: 18px; height: 25px; background: url(../images/portal.png) no-repeat -99px -454px; }
+/* E 右键菜单 */
+
+/* S 右键 应用图标 */
+#menu { left: 100px; top: 100px; }
+#menu li.active h2 { color: #999; }
+#menu li.active { background: #fff;}
+/* E 右键 应用图标 */
+
+/* S 时钟与日期 */
+#clock { position: absolute; top: 120px; right: 100px; z-index: 100;  width: 140px; height: 140px; border: 15px solid #2f3438; background: #eff4f8; border-radius: 50%; box-shadow:inset 0 0 10px #787d81;}
+#clock ul { position: relative; height: 140px;}
+#clock li { position: absolute; left: 69px; top: 0; width: 2px; height: 8px; box-shadow:inset 0 0 2px #999; -webkit-transform-origin: center 70px; -moz-transform-origin: center 70px;-ms-transform-origin: center 70px;-o-transform-origin: center 70px; }
+#clock li:nth-of-type(3n+1){ background: #000; box-shadow: none;}
+#hour{ position: absolute; left: 66px; top: 40px; width: 8px; height: 30px; background: #0a0e12; -webkit-transform-origin: bottom; -moz-transform-origin: bottom; -ms-transform-origin: bottom; -o-transform-origin: bottom;}
+#min{ position: absolute; left: 67px; top: 28px; width: 6px;height: 42px; background: #0a0e11; -webkit-transform-origin: bottom; -moz-transform-origin: bottom;-ms-transform-origin: bottom; -o-transform-origin: bottom;}
+#sec{ position: absolute; left: 68px; top: 20px; width: 4px; height: 50px;background: #0a0e12; -webkit-transform-origin: bottom; -moz-transform-origin: bottom;-ms-transform-origin: bottom; -o-transform-origin: bottom;}
+.ico{ position: absolute; left: 60px; top: 60px; width: 20px; height: 20px;background: #3a3e42; border-radius: 50%; -webkit-transform-origin: bottom;  -moz-transform-origin: bottom;-ms-transform-origin: bottom;-o-transform-origin: bottom;}
+
+#date { position: absolute; top:10px; right: 10px; width: 220px; height: 30px; font: bold 18px/30px '黑体'; text-align: center; color: #fff;}
+/* E 时钟与日期 */

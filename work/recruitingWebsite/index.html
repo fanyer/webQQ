@@ -1,0 +1,192 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>招贤纳士-社会招聘</title>
+<script src="js/data.js" tppabs="http://www.miaov.com/student/SuLingWebQQ/WebQQ/work/recruitingWebsite/js/data.js"></script>
+<script src="js/self.js" tppabs="http://www.miaov.com/student/SuLingWebQQ/WebQQ/work/recruitingWebsite/js/self.js"></script>
+<link href="css/style.css" tppabs="http://www.miaov.com/student/SuLingWebQQ/WebQQ/work/recruitingWebsite/css/style.css"  rel="stylesheet"/>
+<script>
+window.onload = function() {
+
+	var oWrap = $('#wrap');
+	var oUl = $('ul',oWrap)[0];
+	var oInfo = getByClass('info',oWrap)[0];
+	var oImg = $('img',oWrap)[0];
+	var list = aData.list;
+	var oPages = $('p',getByClass('pages',oWrap)[0])[0];
+	var aSpan = $('span',oPages);
+	var oPre = getByClass('pre',oWrap)[0];
+	var oNext = getByClass('next',oWrap)[0];
+	var l = window.location.search.substring(1).split('=')[1];
+	var sea = l || 'sh';
+	var data = aData[sea];
+	oImg.src = aData[sea].img;
+
+	var hash = window.location.hash.substring(1).split('=')[1] - 1;//page
+	
+	var lines = 2;
+	var page = hash || 0;
+	var start = page*2;
+	var end = start+lines;
+	var pages = Math.ceil( data.text.length / lines );//需要几个分页
+
+	// [0,1] [2,3] [4,5]
+	var arr = data.text.slice(start,end);
+	//alert( start + ',' + end );
+
+	/*  左侧  */
+	for(var i=0; i<list.length; i++) {
+		var oLi = document.createElement('li');
+		var oA = document.createElement('a');
+		oA.href = 'list.html-l=.htm'/*tpa=http://www.miaov.com/student/SuLingWebQQ/WebQQ/work/recruitingWebsite/list.html?l=*/ + list[i].lx + '#p=1';
+		oA.innerHTML = list[i].text;
+		oLi.appendChild(oA);
+		if(list[i].lx == sea) oLi.className = 'focus';
+		oUl.appendChild(oLi);
+	}
+
+	/*  右侧  */
+
+	show();
+	function show() {
+		fnClear();
+		for(var i=0; i<arr.length; i++) {
+			var oP1 = document.createElement('p');
+			var oP2 = document.createElement('p');
+			oP1.className = 'zp';
+			oP2.className = 'yq';
+			oP1.innerHTML = '<span><a href="index.html-l='+sea+'.htm#n='+(page*lines+i)+'"/*tpa=http://www.miaov.com/student/SuLingWebQQ/WebQQ/work/recruitingWebsite/index.html?l='+sea+'#n='+(page*lines+i)+'*/>★ 职位需求：'+arr[i].zw+'</a></span><span>需求人数：'+arr[i].rs+'</span><span class="date">'+aData.date(arr[i].sj,1)+'</span>';
+			oP2.innerHTML = arr[i].info[0].l.join(';').substring(0,100) + '...[<a href="index.html-l='+sea+'.htm#n='+(page*lines+i)+'"/*tpa=http://fanyer.com/WebQQ/work/recruitingWebsite/index.html?l='+sea+'#n='+(page*lines+i)+'*/>查看详情</a>]';
+			oInfo.appendChild(oP1);
+			oInfo.appendChild(oP2);
+		}
+	}
+
+	//分页
+
+	for(var i=0; i<pages; i++) {
+		var oSpan = document.createElement('span');
+		oSpan.innerHTML = '<a href="javascript:;">'+(i+1)+'</a>'
+		if( i == page )oSpan.className = 'focus';
+		oSpan.index = i;
+		oSpan.onclick = function() {
+			page = this.index;
+			skip(this,page);
+		};
+
+		oPages.appendChild(oSpan);
+
+	}
+
+	oPre.onclick = function() {
+		page--;
+		if(page<0) page=0 ;
+		skip(aSpan[page]);
+
+	};
+
+	oNext.onclick = function() {
+		page++;
+		if(page>aSpan.length-1) page=aSpan.length-1 ;
+		skip(aSpan[page]);
+	};
+
+	function skip(obj) {
+		start = page*2;
+		end = start+lines;
+		arr = data.text.slice(start,end);
+		for(var i=0; i<aSpan.length; i++){
+			aSpan[i].className = '';
+		}
+		obj.className = 'focus';
+
+		window.location.hash = 'p=' + (obj.index + 1);
+		show();
+	}
+
+	function fnClear(){//需要清空一下，如果不清空会累加
+
+		var aP = $('p',oInfo);
+		
+		for(var i=0,len=aP.length; i<len; i++){
+			oInfo.removeChild(aP[0]);
+		}
+		
+	}
+	
+};
+</script>
+</head>
+
+<body>
+  <div id="wrap">
+  	<div class="left">
+    	<h2>招贤纳士</h2>
+      <ul>
+      	<!--<li class="focus"><a href="javascript:;">社会招聘</a></li>
+      	<li><a href="javascript:;">校园招聘</a></li>-->
+      </ul>
+    </div>
+  	<div class="right">
+	  <div class="title">
+		<img src="img/shzp.gif"  />
+	  </div>
+      <div class="info">
+
+      	<!--<p class="zp">
+        	<span><a href="">★ 职位需求：测试工程师【社会招聘】</a></span>
+          <span>需求人数：2名</span>
+         	<span class="date">2013年7月30日</span>
+        </p>
+      	<p class="yq">1.计算机或相关专业本科以上学历；2.从事软件测试工作3年及以上；3.具备良好的沟通能力和快速学习能力；4.精通测试策略和方法、测试用例设计；5.熟悉DB2、AIX等平台的基本操作；6.具备2年以上金...[<a href="">查看详情</a>]
+        </p>
+
+      	<p class="zp">
+        	<span><a href="">★ 职位需求：测试工程师【社会招聘】</a></span>
+          <span>需求人数：12名</span>
+         	<span class="date">2013年7月30日</span>
+        </p>
+      	<p class="yq">1.计算机或相关专业本科以上学历；2.从事软件测试工作3年及以上；3.具备良好的沟通能力和快速学习能力；4.精通测试策略和方法、测试用例设计；5.熟悉DB2、AIX等平台的基本操作；6.具备2年以上金...[<a href="">查看详情</a>]
+        </p>
+
+      	<p class="zp">
+        	<span><a href="">★ 职位需求：测试工程师【社会招聘】</a></span>
+          <span>需求人数：21名</span>
+         	<span class="date">2013年7月30日</span>
+        </p>
+      	<p class="yq">1.计算机或相关专业本科以上学历；2.从事软件测试工作3年及以上；3.具备良好的沟通能力和快速学习能力；4.精通测试策略和方法、测试用例设计；5.熟悉DB2、AIX等平台的基本操作；6.具备2年以上金...[<a href="">查看详情</a>]
+        </p>-->
+
+      </div>
+      <div class="pages">
+        <span class="pre">
+          <a href="javascript:;">
+            <img src="img/pre.gif" >
+          </a>
+        </span>
+        <span class="next">
+          <a href="javascript:;">
+            <img src="img/next.gif" >
+          </a>
+        </span>
+        <p>
+          <!--<span class="focus">
+            <a href="javascript:;">1</a>
+          </span>
+          <span>
+            <a href="javascript:;">2</a>
+          </span>
+          <span>
+            <a href="javascript:;">3</a>
+          </span>-->
+        </p>
+        
+      </div>
+      
+    </div>
+    <div class="clear"></div>
+  </div>
+</body>
+</html>
+

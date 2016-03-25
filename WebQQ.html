@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="keywords" content="WebQQ">
+    <title>WebQQ</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/data.js"></script>    
+    <script src="js/base.js"></script>
+    <script src="js/core.js"></script>
+    <script src="js/move.js"></script> 
+    <script src="js/mark.js"></script>       
+    <script src="js/main.js"></script>
+    <!--[if IE 6]>
+    <script src="js/DD_belatedPNG_0.0.8a.js"></script>
+    <script>
+    DD_belatedPNG.fix('.png_6');
+    </script>
+    <![endif]-->
+    <!-- fanyer -->
+</head>
+<body>
+
+
+
+
+
+<!-- S 桌面 -->
+<div id="desk">
+<!-- S 头部导航 -->
+    <div id="topnav" class="clear png_6">
+        <div class="topnav_log png_6" title="请登陆">
+        	<img class="png_6" src="images/avatar.png" alt="登陆" />
+        </div>
+        <ul class="topnav_tab clear">
+        	<li>
+            	<a href="javascript:;" title="桌面1">1</a>
+            </li>
+            <li>
+            	<a href="javascript:;" title="桌面2">2</a>
+            </li>
+            <li class="active png_6">
+            	<a href="javascript:;" title="桌面3">3</a>
+            </li>
+            <li>
+            	<a href="javascript:;" title="桌面4">4</a>
+            </li>
+            <li>
+            	<a href="javascript:;" title="桌面5">5</a>
+            </li>
+        </ul>
+        <ul class="view_web clear">
+        	<li class="all_view">
+            	<a class="png_6" href="javascript:;" title="全局视图"></a>
+            </li>
+            <li class="search">
+            	<a class="png_6" href="javascript:;" title="搜索"></a>
+            </li>
+        </ul>
+    </div>
+    <!-- E 头部导航 -->
+
+    <!-- S 侧边栏 -->
+    <div id="left_sideBar" class="peg_6">
+        <!-- S 常用应用图标 -->
+        <ul class="sideBar_use" id="sideBar_use">
+        	<li title="应用市场">
+            	<div class="appButton_appIcon">
+                	<img class="png_6" src="images/icon1.png" alt="应用市场" />
+                </div>
+            </li>
+            <li title="我的网盘">
+            	<div class="appButton_appIcon">
+                    <img class="png_6" src="images/icon2.png" alt="我的网盘"  />
+                </div>                    
+            </li>
+            <li title="QQ">
+                <div class="appButton_appIcon">
+                    <img class="png_6" src="images/icon3.png" alt="QQ" />
+                </div>                    
+            </li>
+            <li title="QQ空间">
+            	<div class="appButton_appIcon">
+                    <img class="png_6" src="images/icon4.png" alt="QQ空间" />
+                </div>                    
+            </li>
+            <li title="QQ邮箱">
+            	<div class="appButton_appIcon">
+                    <img class="png_6" src="images/icon5.png" alt="QQ邮箱" />
+                </div>
+            </li>
+            <li title="腾讯微博">
+            	<div class="appButton_appIcon">
+                    <img class="png_6" src="images/icon6.png" alt="腾讯微博" />
+                </div>
+            </li>
+        </ul>
+        <!-- E 常用应用图标 -->
+
+        <!-- S 设置 -->
+        <div class="sideBar_set">
+            <ul class="set_1 clear">
+            	<li>
+                	<a class="input png_6" href="javascript:;" title="QQ云输入法">QQ云输入法</a>
+                </li>
+                <li>
+                	<a class="voice png_6" href="javascript:;" title="静音">静音</a>
+                </li>
+            </ul>
+            <ul class="set_2 clear">
+            	<li>
+                	<a class="system_set png_6" href="javascript:;" title="系统设置">系统设置</a>
+                </li>
+                <li id="themeSet">
+                	<a class="theme_set png_6" href="javascript:;" title="主题设置">主题设置</a>
+                </li>
+            </ul>
+            <div class="set_3">
+                <a class="start png_6" href="javascript:;" title="点击这里开始">点击这里开始</a>
+            </div>
+        </div>
+        <!-- E 设置 -->
+    </div>
+    <!-- E 侧边栏 -->
+
+    <!-- S 桌面应用 -->
+    <div id="desk_use" class="clear">
+    </div>
+    <!-- E 桌面应用 -->
+    <!-- S task -->
+    <div id="task" class="task clear">
+    </div>
+    <!-- E task -->
+    <!-- S clock&&date -->
+    <div id="clock">
+        <ul>
+        </ul>
+        <div id="hour"></div>
+        <div id="min"></div>
+        <div id="sec"></div>
+        <div class="ico"></div>
+    </div>
+    <div id="date"></div>
+    <!-- E clock&&date -->
+
+    <!-- S 个人信息 -->
+
+    <!-- E 个人信息 -->
+
+</div>
+<!-- E 桌面 -->
+
+<!-- S 主题设置（更换桌面背景）-->
+<div id="theme_settings">
+    <div class="theme_title">
+        <h2>主题设置</h2>
+        <div class="control_window">
+        	<a id="theme_close" class="window_close" href="javascript:;" title="关闭"></a>
+        </div>
+    </div>
+    <div class="theme_content_wrap">
+        <ul class="theme_content clear">
+            <li>
+                <img src="images/bg1.jpg">
+                <p>深海仰望</p>
+            </li>
+            <li>
+                <img src="images/bg2.jpg">
+                <p>教师节</p>
+            </li>
+            <li>
+                <img src="images/bg3.jpg">
+                <p>七夕</p>
+            </li><li>
+                <img src="images/bg4.jpg">
+                <p>梦翔天际</p>
+            </li>
+            <li>
+                <img src="images/bg5.jpg">
+                <p>水墨年华</p>
+            </li>
+            <li>
+                <img src="images/bg6.jpg">
+                <p>蒲英之梦</p>
+            </li>
+            <li>
+                <img src="images/bg7.jpg">
+                <p>圣诞快乐</p>
+            </li>
+            <li>
+                <img src="images/bg8.jpg">
+                <p>童年记忆</p>
+            </li>
+            <li>
+                <img src="images/bg9.jpg">
+                <p>晨光微曦</p>
+            </li>
+            <li>
+                <img src="images/bg10.jpg">
+                <p>梦醒时分</p>
+            </li>
+            <li>
+                <img src="images/bg11.jpg">
+                <p>甜蜜情人节</p>
+            </li>
+            <li id="cloud">
+                <img src="images/bg12.jpg">
+                <p>蓝天白云</p>
+            </li>
+
+        </ul>
+    </div>
+</div>
+<!-- E 主题设置（更换桌面背景）-->
+
+<!-- S 窗口 -->
+<!--<div  class="popup window_pop">
+    <div class="popup_title">
+        <h2>窗口</h2>
+        <div class="control_window clear">
+            <a class="window_min" href="javascript:;" title="最小化"></a>
+            <a class="window_max" href="javascript:;" title="最大化"></a>
+            <a class="window_close" href="javascript:;" title="关闭"></a>
+        </div>
+    </div>
+    <div class="popup_content_wrap">
+        <iframe src="" frameborder="0" scrolling="yes">
+
+        </iframe>
+    </div>
+</div>-->
+<!-- E 窗口 -->
+
+<!-- S 桌面背景-->
+<div id="skin_peeder" >
+    <img id="skin" src="images/bg12.jpg" alt="桌面背景" />
+</div>
+<div id="cloud_content" class="bgMove">
+    <div class="scene_cloud"></div>
+</div>
+<div class="bottomBarBg"></div>
+<div class="bottomBarBgTask"></div>
+<!-- E 桌面背景 -->
+
+<!-- S 右键菜单 -->
+<div id="contextmenu" class="contextmenu">
+    <ul class="contextmenu_con">
+        <li>
+            <h2>查看<span></span></h2>
+            <ul>
+                <li>
+                    <h2><b></b>小图标</h2>
+                </li>
+                <li class="active">
+                    <h2><b></b>大图标</h2>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <h2>排列方式<span></span></h2>
+            <ul>
+                <li>
+                    <h2><b></b>横向</h2>
+                </li>
+                <li class="active">
+                    <h2><b></b>纵向</h2>
+                </li>
+            </ul>
+        </li>
+        <li class="segmentation">
+            <h2>刷新</h2>
+        </li>
+        <li class="segmentation">
+            <h2>显示桌面</h2>
+        </li>
+        <li>
+            <h2>主题设置</h2>
+        </li>
+        <li>
+            <h2>反馈</h2>
+        </li>
+        <li>
+            <h2>注销</h2>
+        </li>
+    </ul>
+</div>
+<!-- E 右键菜单 -->
+<!-- S 右键 应用图标 -->
+<div id="menu" class="contextmenu">
+    <ul class="contextmenu_con">
+        <li class="segmentation">
+            <h2>打开应用</h2>
+        </li>
+        <li >
+            <h2>移动到<span></span></h2>
+            <ul>
+                <li>
+                    <h2>桌面1</h2>
+                </li>
+                <li>
+                    <h2>桌面2</h2>
+                </li>
+                <li class="active">
+                    <h2>桌面3</h2>
+                </li>
+                <li>
+                    <h2>桌面4</h2>
+                </li>
+                <li>
+                    <h2>桌面5</h2>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <h2>删除应用</h2>
+        </li>
+    </ul>
+</div>
+<!-- E 右键 应用图标 -->
+</body>
+</html>

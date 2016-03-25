@@ -1,0 +1,116 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>无标题文档</title>
+    <style>
+        #div1 {width: 550px; height: 240px; border: 10px solid #999; margin: 100px auto 0; position: relative; overflow: hidden;}
+        #ul1 {margin:0; padding: 0; list-style: none; position: absolute; left:0; top:0;}
+        li {width: 550px; height: 240px; float: left;}
+        img {display: block;}
+        #n {position: absolute; right: 10px; bottom: 10px; }
+        #n span {padding: 5px 10px; background: #999; color: white; cursor: pointer;}
+        #n span.current {background: #f90;}
+        #left, #right { position: absolute; height: 100px; background: white; opacity: 0.6; top: 70px; width: 50px; text-align: center; font-size: 30px; line-height: 100px; text-decoration: none; color: black; }
+        #right {right: 0;}
+        #left:hover, #right:hover {opacity: 0.8;}
+    </style>
+    <script src="move.js" tppabs="http://www.miaov.com/student/SuLingWebQQ/WebQQ/work/imagesRoll/move.js"></script>
+    <script>
+        window.onload = function() {
+
+            var oDiv = document.getElementById('div1');
+            var oUl = document.getElementById('ul1');
+            var aLi = oUl.getElementsByTagName('li');
+            var aSpan = oDiv.getElementsByTagName('span');
+            var oLeft = document.getElementById('left');
+            var oRight = document.getElementById('right');
+
+
+            var iLen = aLi.length;
+            var iWidth = aLi[0].offsetWidth;
+            var iCur = 0;
+            aLi[0].style.position = 'relative';
+            aLi[iLen-1].style.position = 'relative';
+
+            oUl.style.width = iLen * iWidth + 'px';
+
+            for(var i=0; i<iLen; i++) {
+                aSpan[i].index = i;
+                aSpan[i].onclick = function() {
+                    aLi[0].style.left = '0px';
+                    iCur = this.index;
+                    move();
+                }
+            }
+
+            oLeft.onclick = function() {
+                iCur --;
+                if(iCur == -1) {
+                    aLi[iLen-1].style.left = -iLen*iWidth + 'px';
+                }
+                move();
+
+            };
+
+            oRight.onclick = function() {
+                iCur ++;
+                if(iCur == iLen) {
+                    aLi[0].style.left = iLen*iWidth + 'px';
+                }
+                move();
+
+            };
+
+            function move() {
+                for(var i=0; i<iLen; i++) {
+                    aSpan[i].className = '';
+                }
+                aSpan[(iCur+iLen)%iLen].className = 'current';
+                var iLeft = -iCur * iWidth;
+                doMove(oUl,{
+                    left : iLeft
+                },1000, 'linear',function() {
+                    if(iCur == iLen) {
+                        aLi[0].style.left = '0px';
+                        oUl.style.left = '0px';
+                        iCur = 0;
+                    }
+
+                    if(iCur == -1) {
+                        aLi[iLen-1].style.left = '0px';
+                        iCur = iLen-1;
+                        oUl.style.left =-iCur * iWidth + 'px';
+
+                    }
+                });
+            }
+
+        }
+    </script>
+</head>
+
+<body>
+<div id="div1">
+    <ul id="ul1">
+        <li><img src="images/1.jpg" tppabs="http://www.miaov.com/student/SuLingWebQQ/WebQQ/work/imagesRoll/images/1.jpg" /></li>
+        <li><img src="images/2.jpg" tppabs="http://www.miaov.com/student/SuLingWebQQ/WebQQ/work/imagesRoll/images/2.jpg" /></li>
+        <li><img src="images/3.jpg" tppabs="http://www.miaov.com/student/SuLingWebQQ/WebQQ/work/imagesRoll/images/3.jpg" /></li>
+        <li><img src="images/4.jpg" tppabs="http://www.miaov.com/student/SuLingWebQQ/WebQQ/work/imagesRoll/images/4.jpg" /></li>
+        <li><img src="images/5.jpg" tppabs="http://www.miaov.com/student/SuLingWebQQ/WebQQ/work/imagesRoll/images/5.jpg" /></li>
+        <li><img src="images/6.jpg" tppabs="http://www.miaov.com/student/SuLingWebQQ/WebQQ/work/imagesRoll/images/6.jpg" /></li>
+    </ul>
+    <p id="n">
+        <span class="current">1</span>
+        <span>2</span>
+        <span>3</span>
+        <span>4</span>
+        <span>5</span>
+        <span>6</span>
+    </p>
+    <a href="javascript:;" id="left"><</a>
+    <a href="javascript:;" id="right">></a>
+
+</div>
+</body>
+</html>
