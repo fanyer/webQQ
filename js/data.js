@@ -25,10 +25,10 @@ var desk_icon = [
 		{src:'./images/app11.png',title:'豆瓣FM',webSrc:'http://douban.fm/partner/qq_plus',isOpen:'yes'},
 		{src:'./images/app12.png',title:'花瓣网',webSrc:'http://huaban.com/',isOpen:'yes'},
         {src:'./images/app20.png',title:'2048游戏',webSrc:'./work/2048/2048.html'/*tpa=http://wen.oeeee.com/fanyer/2048/2048.html*/,isOpen:'yes'},
-        {src:'./images/app20.png',title:'小游戏',webSrc:'http://www.miaov.com/student/SuLingWebQQ/WebQQ/js/work/QQGame/index.html',isOpen:'yes'},
+        {src:'./images/app20.png',title:'小游戏',webSrc:'../js/work/QQGame/index.html',isOpen:'yes'},
         {src:'./images/app20.png',title:'无缝滚动',webSrc:'./work/imagesRoll/index.html',isOpen:'yes'},
         {src:'./images/app20.png',title:'招聘信息',webSrc:'./work/recruitingWebsite/index.html',isOpen:'yes'},
-        {src:'./images/app20.png',title:'文档说明',webSrc:'http://www.miaov.com/student/SuLingWebQQ/WebQQ/js/work/documentSpecification/index.html',isOpen:'yes'},
+        {src:'./images/app20.png',title:'文档说明',webSrc:'../js/work/documentSpecification/index.html',isOpen:'yes'},
 		{src:'./images/add.png',title:'添加',isOpen:'no'}
 	],
 	[
